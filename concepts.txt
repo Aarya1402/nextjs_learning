@@ -87,5 +87,61 @@ caching parameters: _revalidate
 
 middlewares-middleware.tsx
 
+Client side rendering
+    cons: SEO, more loading time, larger files size if complex apps
+
+Server side rendering 
+    hydration: non-interactive UI is l;oaded with JS to make them interactive
+    cons:   fetch everything before first loaded
+            fetch before you can hydrate anything
+            hydration before interaction
+Suspense SSR: 
+    let the other components load this component will load parallely
+    selective hydration
+    cons: still endup loading whole app code
+
+React server component:
+    client component: rendered by the server first then client, and then all subsequential request rendered only by client
+                      "use client" directive
+    Server component: small bundle sizes
+                      caching
+                      no hydration
+                      faster initialization
+                      more security
+                      better SEO
+                      streaming
+                      improved performance
+                      rendered only on the server
+
+static rendering:
+    HTML files are generated at build time with RSC payloads and JS code for client side hydration
+    Direct routes visits serve HTML files
+    prefetching:
+        preloads the navigation links in the background
+
+Dynamic rendering:
+    generates HTML files on the request
+    next js automatically enables it when it encounters dynamic functions like cookies,headers, connections, searchParams, draftmode
+    generateStaticParams:
+        by default prodict/[id] will land to productdetailspage of specified id dynamically
+        to make certain html pages rendered 
+        parameters other than returned in generateStaticParams are encountered in URL then it will be generated at runtime dynamically
+    dynamic params:
+        it is a varible.
+        if true then generateStaticParams will act normally
+        if false then parameters other than returned in generateStaticParams are encountered in URL then it will not be generated at runtime dynamically
+    
+
+
+
+
+
+
+
+
+
+
+
+
 
 
