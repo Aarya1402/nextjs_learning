@@ -1,1 +1,91 @@
 React Server Components:
+    Client component-"use client"   
+    server component-default
+routing 
+    file system based page.tsx
+nested routing:
+    /name/name
+dynamic routing:
+    [route parameter] 
+    access through params: promis<{id: string}>
+catch all segment 
+    */docs/*
+    */docs/doc1/concept1
+    [...slug]-> slug[0]=doc1  slug[1]=consept1
+
+notfound.tsx=doesn't accept any prop as parameter
+
+private folder _name
+
+route groups (auth) will not be included in URL path
+
+layouts: rootLayout.tsx is must(created by next js)
+    search params can not be accessed in layoout component
+
+nested layouts: layout.tsx within folder
+
+multiple root layouts
+
+metadata:
+    static metadata: stored in metadata object
+    dynamic metadata: generated using function generateMetadata
+    metadata.title=title of head(tab)
+
+title metadata: 
+    default: for all children without metadata
+    template: {child metadata} + content (hello user) user from child and hello from parent
+    absolute: no interference of parent or child. highest priority
+
+Navigation <Link href="/"> <Link href="" replace/>
+
+activelinks=usepathname
+
+params
+searchParams
+
+server: asynce-await
+client: "use client"
+
+routing redirection
+    router.push("/path")
+    router.replace("/")
+    redirect("/")
+
+templatefiles: template.tsx
+loading.tsx
+error.tsx
+global-error.tsx(not for dev env)
+
+Parallel routes:
+    multiple pages loaded within the same layout
+    slots(@name)
+        independent component   
+        subrouting
+        independent routing handler
+
+for unmatched routes: default.tsx
+
+conditional routes: if else conditional stmt
+
+intercepting routes:(for modal)
+    (.)-same lvl
+    (..)-one lvl up
+    (..)(..)-two lvl up
+    (...)-from root
+    through navigation-> intercepted route
+    reload/ direct URL-> normal page.tsx
+
+routeHandlers:
+    route.tsx
+    for external API req
+    for security of API keys
+    if folder contains both page.tsx and route.tsx it will work as route.tsx
+
+req parameters/ query parameters: same as node
+
+caching parameters: _revalidate
+
+middlewares-middleware.tsx
+
+
+
