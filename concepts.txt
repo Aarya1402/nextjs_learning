@@ -43,7 +43,7 @@ activelinks=usepathname
 params
 searchParams
 
-server: asynce-await
+server: async-await
 client: "use client"
 
 routing redirection
@@ -131,6 +131,30 @@ Dynamic rendering:
         if true then generateStaticParams will act normally
         if false then parameters other than returned in generateStaticParams are encountered in URL then it will not be generated at runtime dynamically
     
+Server and Client composition patterns
+
+    cintext providers
+    client only component
+    server only component
+        server component in client component-works
+        client component in client component-works
+        client component in server component-works
+        server component in client component-don't work
+            use children prop to pass the server component
+    when a component is made a client component, all childern of that component are made client component
+
+Data fetching and mutation:
+    in client same as React
+    in server use async await function    
+    
+    memoization: no repeatative call to the request which are already fetched before
+
+    loading and error state
+
+    sequential data fetching
+    Parallel data fetching
+        define functions to be fetched parallely and then call promise.all()
+     
 
 
 
