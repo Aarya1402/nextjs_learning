@@ -11,7 +11,7 @@ dynamic routing:
 catch all segment 
     */docs/*
     */docs/doc1/concept1
-    [...slug]-> slug[0]=doc1  slug[1]=consept1
+    [[...slug]]-> slug[0]=doc1  slug[1]=consept1
 
 notfound.tsx=doesn't accept any prop as parameter
 
@@ -155,7 +155,18 @@ Data fetching and mutation:
     Parallel data fetching
         define functions to be fetched parallely and then call promise.all()
      
+    fetching from the database
+        "use server"
+        useFormStatus hook-> pending state-used for form submission
+        useActionState-> isPending state-used for all actions including form submission
 
+        delte: revalidateFetch("/dashboard")-> refetch the data for the given component
+    
+    useOptimistic hook-> reflect the changes to UI first then executes backend request
+
+    clerk authentication
+
+    vercel for deployment
 
 
 
